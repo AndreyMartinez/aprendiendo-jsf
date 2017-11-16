@@ -2,21 +2,25 @@
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:h="http://java.sun.com/jsf/html">
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
 
 <h:head>
 <title>welcome</title>
 </h:head>
 <h:body>
 <h:form>
-<p>Nombre</p>
-<h:inputText id="usuario" value="#{mensaje.nombre}" />
-<p>Clave</p>
-<h:inputSecret  id = "clave" value="#{mensaje.password}" />
-<br></br>
-<h:commandButton action="#{mensaje.iniciar}" value="Iniciar Sesión" />
 
-<h:outputText value="#{mensaje.mensajeLogeo}" />
+
+
+<p>Nombre</p>
+<p:inputText id="usuario" value="#{mensajeController.mensajeDto.nombre}" />
+<p>Clave</p>
+<p:password id = "clave" value="#{mensajeController.mensajeDto.password}" />
+<br></br>
+<p:commandButton  value="Iniciar Sesión" rendered="#{ 2 == 2 }" action="#{mensajeController.iniciar()}" />
+
+
 </h:form>
 
 
